@@ -1,0 +1,24 @@
+# 2520 is the smallest number that can be divided by each 
+# of the numbers from 1 to 10 without any remainder.
+# What is the smallest positive number that is evenly 
+# divisible by all of the numbers from 1 to 20?
+
+# we only care about a subset, e.g. divisible by 20 implies
+# divisible by 2, 4, 5, 10, divis by 18 implies 9, 6, 3, 2, etc.
+# let's go with just 11-20... might be smaller set but 
+# shooting from the hip we're good
+
+divis_list = []
+
+# this is gonna be sloppy, starting at 2520 given wording of problem
+# duh... can step by 20, so removing 20 check and just screening for 11-19
+for x in range(2520,1000000000,20):
+  if x % 11 == 0 and x % 12 == 0 and x % 13 == 0 and x % 14 == 0 and x % 15 == 0 and x % 16 == 0 and x % 17 == 0 and x % 18 == 0 and x % 19 == 0:
+		divis_list.append(x)
+		print "found one:"
+		print x
+		print " "
+		
+print "--------------"
+print "The smallest is:"
+print min(divis_list)
